@@ -291,13 +291,13 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
     android_device_id = ""
     request_id = ""
     phone_id = ""
-    app_id = "567067343352427"
+    app_id = "936619743392459"
     uuid = ""
     mid = ""
-    country = "US"
-    country_code = 1  # Phone code, default USA
-    locale = "en_US"
-    timezone_offset: int = -14400  # New York, GMT-4 in seconds
+    country = "JP"
+    country_code = 81  # Phone code, default USA
+    locale = "ja_JP"
+    timezone_offset: int = 32400  # New York, GMT-4 in seconds
     ig_u_rur = ""  # e.g. CLN,49897488153,1666640702:01f7bdb93090f4f773516fc2cf1424178a58a2295b4c754090ba02cb0a834e2d1f731e20
     ig_www_claim = ""  # e.g. hmac.AR2uidim8es5kYgDiNxY0UG_ZhffFFSt8TGCV5eA1VYYsMNx
 
@@ -325,7 +325,7 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
         )
         self.set_device(self.settings.get("device_settings"))
         # c7aeefd59aab78fc0a703ea060ffb631e005e2b3948efb9d73ee6a346c446bf3
-        self.bloks_versioning_id = "ce555e5500576acd8e84a66018f54a05720f2dce29f0bb5a1f97f0c10d6fac48"  # this param is constant and will change by Instagram app version
+        self.bloks_versioning_id = "1fe824dc5ba7750f06ea7a603a1da281a31eb5df0affc50a98d7d83ddaf4c3b1"  # this param is constant and will change by Instagram app version
         self.set_user_agent(self.settings.get("user_agent"))
         self.set_uuids(self.settings.get("uuids") or {})
         self.set_locale(self.settings.get("locale", self.locale))
@@ -401,7 +401,7 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
         if username and password:
             self.username = username
             self.password = password
-        
+
         if self.username is None or self.password is None:
             raise BadCredentials("Both username and password must be provided.")
 
@@ -650,16 +650,16 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
             A boolean value
         """
         self.device_settings = device or {
-            "app_version": "269.0.0.18.75",
-            "android_version": 26,
-            "android_release": "8.0.0",
+            "app_version": "364.0.0.20.92",
+            "android_version": 33,
+            "android_release": "13.0.0",
             "dpi": "480dpi",
             "resolution": "1080x1920",
-            "manufacturer": "OnePlus",
-            "device": "devitron",
-            "model": "6T Dev",
+            "manufacturer": "Google",
+            "device": "Pixel 6 Pro",
+            "model": "Pixel 6 Pro",
             "cpu": "qcom",
-            "version_code": "314665256",
+            "version_code": "686006448",
         }
         self.settings["device_settings"] = self.device_settings
         if reset:
